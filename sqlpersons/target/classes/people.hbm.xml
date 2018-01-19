@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!--<hibernate-mapping package="com.mycompany.personnes" table="persons">
+  <class name="PersonWithId" table="persons">
+    <id name="id" column="id" />
+    <property name="nom" column="nom" />
+    <property name="prenom" column="prenom"/>
+    <property name="datenaissance" column="dateNaissance"/>
+  </class>
+</hibernate-mapping>-->
+
+<hibernate-mapping>
+    <class name="com.mycompany.personnes.PersonWithId" table="persons">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="nom" type="string">
+            <column name="nom"/>
+        </property>
+        <property name="prenom" type="string">
+            <column name="prenom"/>
+        </property>
+        <property name="datenaissance" type="string">
+            <column name="dateNaissance"/>
+        </property>
+    </class>
+    <class name="com.mycompany.personnes.Relationship" table="relationships">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="id1" type="java.lang.Integer">
+            <column name="idp1" />
+        </property>
+        <property name="id2" type="java.lang.Integer">
+            <column name="idp2" />
+        </property>
+        <property name="name" type="string">
+            <column name="name"/>
+        </property>
+    </class>
+</hibernate-mapping>
